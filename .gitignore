@@ -1,6 +1,4 @@
 # Environment files
-.env
-.env.*
 
 # Python cache
 __pycache__/
@@ -9,8 +7,6 @@ __pycache__/
 *.pyd
 
 # Virtual environments
-venv/
-.venv/
 
 # Jupyter
 .ipynb_checkpoints/
