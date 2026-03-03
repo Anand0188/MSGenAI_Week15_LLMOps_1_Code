@@ -1,84 +1,184 @@
 """
-PII Detection using regex patterns
-RUBRIC: Governance & Guardrails - PII detection (2 marks)
+PII Detector Guardrail
+RUBRIC: Guardrails Implementation (10 marks total)
+- Content safety guardrail implemented (5 marks)
+- PII detection guardrail implemented (5 marks)
 
-TASK: Implement PII detection for common personally identifiable information
+TASK: Implement regex-based PII detection
 """
 import re
-from typing import Dict, List
 import logging
-
-logger = logging.getLogger(__name__)
+from typing import Dict, List, Any
 
 class PIIDetector:
-    """Detects Personally Identifiable Information"""
+    """PII detection guardrail using regex patterns"""
     
     def __init__(self):
-        # HINT: Define regex patterns for common PII types
-        # You need patterns for: email, phone, ssn, credit_card, passport, zip_code, ip_address
-        self.patterns = {
-            'email': r'___',  # HINT: Pattern like name@domain.com
-            'phone': r'___',  # HINT: Pattern for (123) 456-7890 or 123-456-7890 format
-            'ssn': r'___',  # HINT: Pattern for XXX-XX-XXXX format
-            'credit_card': r'___',  # HINT: Pattern for 16 digits with optional spaces/hyphens
-            'passport': r'___',  # HINT: Pattern for 1-2 letters followed by 6-9 digits
-            'zip_code': r'___',  # HINT: Pattern for 5 digits or 5+4 format
-            'ip_address': r'___'  # HINT: Pattern for IPv4 address (four groups of 1-3 digits)
-        }
+        """
+        Initialize PII detector with regex patterns
+        
+        HINT: Define regex patterns for different PII types
+        """
+        # HINT: Define email pattern
+        self.email_pattern = r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b'
+        
+        # HINT: Define phone number patterns (US and international)
+        self.phone_patterns = [
+            r'\b\d{3}-\d{3}-\d{4}\b',  # US format: 123-456-7890
+            r'\b\(\d{3}\)\s?\d{3}-\d{4}\b',  # US format: (123) 456-7890
+            r'\b\d{10}\b',  # 10 digit number
+            r'\+\d{1,3}[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}\b'  # International
+        ]
+        
+        # HINT: Define SSN pattern (US format)
+        self.ssn_pattern = r'\b\d{3}-\d{2}-\d{4}\b'
+        
+        # HINT: Define credit card pattern
+        self.credit_card_pattern = r'\b(?:\d[ -]*?){13,16}\b'
+        
+        # HINT: Define passport number patterns
+        self.passport_patterns = [
+            r'\b[A-Z0-9]{6,9}\b',  # General passport format
+            r'\b[A-Z]{1,2}\d{6,7}\b'  # Country code + numbers
+        ]
+        
+        # HINT: Define address patterns
+        self.address_patterns = [
+            r'\d+\s+[A-Za-z0-9\s]+(?:Street|St|Avenue|Ave|Road|Rd|Boulevard|Blvd|Lane|Ln|Drive|Dr)\b',
+            r'\b\d{5}(?:-\d{4})?\b'  # ZIP codes
+        ]
+        
+        # HINT: Set up logging
+        self.logger = logging.getLogger(__name__)
     
-    def detect(self, text: str) -> Dict:
+    def detect_pii(self, text: str) -> Dict[str, List[str]]:
         """
-        Detect PII in text
+        Detect PII in text and return categorized results
         
-        HINT: This method should:
-        1. Initialize empty entities list
-        2. Loop through self.patterns
-        3. Use re.finditer to find all matches
-        4. For each match, append dict with type, value, start, end
-        5. Return dict with has_pii (bool), entities (list), count (int)
+        HINT: Check each PII type and return dict with detected values
         """
-        entities = []
+        results = {}
         
-        # HINT: Loop through each pattern type and pattern
-        for entity_type, pattern in self.patterns.___():
-            # HINT: Use re.finditer to find all matches
-            matches = re.___(pattern, text)
-            
-            for match in matches:
-                # HINT: Append entity info to entities list
-                entities.append({
-                    'type': ___,  # HINT: entity_type
-                    'value': ___,  # HINT: match.group()
-                    'start': ___,  # HINT: match.start()
-                    'end': ___     # HINT: match.end()
-                })
+        # HINT: Detect emails
+        emails = self._find_matches(text, self.email_pattern)
+        if emails:
+            results["email"] = emails
+        
+        # HINT: Detect phone numbers
+        phones = []
+        for pattern in self.phone_patterns:
+            phones.extend(self._find_matches(text, pattern))
+        if phones:
+            results["phone"] = phones
+        
+        # HINT: Detect SSN
+        ssn = self._find_matches(text, self.ssn_pattern)
+        if ssn:
+            results["ssn"] = ssn
+        
+        # HINT: Detect credit cards
+        credit_cards = self._find_matches(text, self.credit_card_pattern)
+        if credit_cards:
+            results["credit_card"] = credit_cards
+        
+        # HINT: Detect passport numbers
+        passports = []
+        for pattern in self.passport_patterns:
+            passports.extend(self._find_matches(text, pattern))
+        if passports:
+            results["passport"] = passports
+        
+        # HINT: Detect addresses
+        addresses = []
+        for pattern in self.address_patterns:
+            addresses.extend(self._find_matches(text, pattern))
+        if addresses:
+            results["address"] = addresses
+        
+        return results
+    
+    def _find_matches(self, text: str, pattern: str) -> List[str]:
+        """
+        Find all matches for a regex pattern in text
+        
+        HINT: Use re.findall to extract all matches
+        """
+        matches = re.findall(pattern, text, re.IGNORECASE)
+        return matches
+    
+    def has_pii(self, text: str) -> bool:
+        """
+        Quick check if text contains any PII
+        
+        HINT: Return True if any PII type is detected
+        """
+        pii_results = self.detect_pii(text)
+        return len(pii_results) > 0
+    
+    def get_pii_summary(self, text: str) -> Dict[str, Any]:
+        """
+        Get summary of PII detection results
+        
+        HINT: Return summary with counts and types detected
+        """
+        pii_results = self.detect_pii(text)
+        
+        # HINT: Count total PII instances
+        total_pii = sum(len(values) for values in pii_results.values())
+        
+        # HINT: Get types detected
+        types_detected = list(pii_results.keys())
         
         return {
-            'has_pii': ___,  # HINT: len(entities) > 0
-            'entities': ___,  # HINT: entities
-            'count': ___     # HINT: len(entities)
+            "has_pii": total_pii > 0,
+            "total_pii_count": total_pii,
+            "types_detected": types_detected,
+            "detailed_results": pii_results,
+            "severity": self._calculate_severity(total_pii, types_detected)
         }
     
-    def redact(self, text: str) -> str:
+    def _calculate_severity(self, total_count: int, types: List[str]) -> str:
         """
-        Redact PII from text
+        Calculate severity level based on PII count and types
         
-        HINT: Use re.sub to replace each pattern with [TYPE_REDACTED]
+        HINT: Return severity level (low, medium, high)
+        """
+        if total_count == 0:
+            return "none"
+        elif total_count <= 2 and len(types) <= 2:
+            return "low"
+        elif total_count <= 5 and len(types) <= 3:
+            return "medium"
+        else:
+            return "high"
+    
+    def redact_pii(self, text: str) -> str:
+        """
+        Redact PII from text by replacing with placeholders
+        
+        HINT: Replace detected PII with [REDACTED] placeholders
         """
         redacted_text = text
         
-        # HINT: Loop through patterns and redact each type
-        for entity_type, pattern in self.patterns.items():
-            if entity_type == 'email':
-                redacted_text = re.sub(pattern, '___', redacted_text)  # HINT: '[EMAIL_REDACTED, PHONE_REDACTED, etc.]'
-            elif entity_type == 'phone':
-                redacted_text = re.sub(pattern, '___', redacted_text)  
-            elif entity_type == 'passport':
-                redacted_text = re.sub(pattern, '___', redacted_text)  
-            elif entity_type == 'credit_card':
-                redacted_text = re.sub(pattern, '___', redacted_text)  
-            else:
-                # HINT: Use f-string to create dynamic redaction message
-                redacted_text = re.sub(pattern, f'[{___}_REDACTED]', redacted_text)
+        # HINT: Redact emails
+        redacted_text = re.sub(self.email_pattern, "[REDACTED_EMAIL]", redacted_text, flags=re.IGNORECASE)
+        
+        # HINT: Redact phone numbers
+        for pattern in self.phone_patterns:
+            redacted_text = re.sub(pattern, "[REDACTED_PHONE]", redacted_text, flags=re.IGNORECASE)
+        
+        # HINT: Redact SSN
+        redacted_text = re.sub(self.ssn_pattern, "[REDACTED_SSN]", redacted_text)
+        
+        # HINT: Redact credit cards
+        redacted_text = re.sub(self.credit_card_pattern, "[REDACTED_CREDIT_CARD]", redacted_text)
+        
+        # HINT: Redact passport numbers
+        for pattern in self.passport_patterns:
+            redacted_text = re.sub(pattern, "[REDACTED_PASSPORT]", redacted_text, flags=re.IGNORECASE)
+        
+        # HINT: Redact addresses
+        for pattern in self.address_patterns:
+            redacted_text = re.sub(pattern, "[REDACTED_ADDRESS]", redacted_text, flags=re.IGNORECASE)
         
         return redacted_text

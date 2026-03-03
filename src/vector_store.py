@@ -26,21 +26,21 @@ def get_vector_store(embedding_function):
     """
     
     # HINT: Get configuration values from Config class
-    endpoint = Config.___ 
-    key = Config.___  
-    index_name = Config.___  
+    endpoint = Config.AZURE_SEARCH_ENDPOINT
+    key = Config.AZURE_SEARCH_KEY
+    index_name = Config.AZURE_SEARCH_INDEX_NAME
     
     # HINT: Validate that required credentials are present
     if not endpoint or not key:
-        raise ValueError("___ and ___ must be set.") 
+        raise ValueError("AZURE_SEARCH_ENDPOINT and AZURE_SEARCH_KEY must be set.")
     # HINT: Initialize AzureSearch vector store
     # Required parameters: azure_search_endpoint, azure_search_key, 
     # index_name, embedding_function (use .embed_query method)
     vector_store = AzureSearch(
-        azure_search_endpoint=___, 
-        azure_search_key=___,  
-        index_name=___, 
-        embedding_function=___.___ 
+        azure_search_endpoint=endpoint,
+        azure_search_key=key,
+        index_name=index_name,
+        embedding_function=embedding_function.embed_query
     )
     
     print(f"Initialized Azure AI Search (LangChain) for index '{index_name}'")

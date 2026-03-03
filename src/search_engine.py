@@ -28,29 +28,29 @@ class TravelSearchEngine:
         4. Vector store using get_vector_store
         """
         # HINT: Initialize governance gate
-        self.governance_gate = ___() 
+        self.governance_gate = GovernanceGate()
         
         # HINT: Initialize Azure Chat OpenAI LLM
         # Required params: api_key, azure_endpoint, api_version, deployment_name, temperature
         self.llm = AzureChatOpenAI(
-            api_key=Config.___,
-            azure_endpoint=Config.___,
-            api_version=Config.___,
-            deployment_name=Config.___,
-            temperature=___ 
+            api_key=Config.AZURE_OPENAI_API_KEY,
+            azure_endpoint=Config.AZURE_OPENAI_ENDPOINT,
+            api_version=Config.AZURE_OPENAI_API_VERSION,
+            deployment_name=Config.AZURE_OPENAI_DEPLOYMENT_NAME,
+            temperature=0.7
         )
         
         # HINT: Initialize Azure OpenAI Embeddings
         # Required params: api_key, azure_endpoint, azure_deployment, api_version
         self.embeddings = AzureOpenAIEmbeddings(
-            api_key=Config.___,  
-            azure_endpoint=Config.___,  
-            azure_deployment=Config.___,  
-            api_version=Config.___,  
+            api_key=Config.AZURE_OPENAI_API_KEY,
+            azure_endpoint=Config.AZURE_OPENAI_ENDPOINT,
+            azure_deployment=Config.AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME,
+            api_version=Config.AZURE_OPENAI_API_VERSION,
         )
         
         # HINT: Initialize Vector Store using get_vector_store function
-        self.vector_store = ___(self.___) 
+        self.vector_store = get_vector_store(self.embeddings)
     
     def search_by_text(self, query_text: str, k: int = 5):
         """
@@ -66,28 +66,28 @@ class TravelSearchEngine:
         """
         
         # HINT: Set MLflow experiment name from Config
-        mlflow.set_experiment(Config.___)  
+        mlflow.set_experiment(Config.MLFLOW_EXPERIMENT_NAME)
         
         with mlflow.start_run(run_name="search_travel_info"):
             print(f"DEBUG: Text Query: {query_text}")
             
             # HINT: Validate input using governance gate
-            gov_check = self.governance_gate.___(___)
+            gov_check = self.governance_gate.validate_input(query_text)
             
-            if not gov_check['___']:  
+            if not gov_check['is_valid']:
                 # HINT: Log governance failure event
-                mlflow.log_event("GovernanceCheckFailed", {"violations": gov_check['___']}) 
+                mlflow.log_event("GovernanceCheckFailed", {"violations": gov_check['violations']})
                 return [], "Query blocked by security checks."
 
             # HINT: Log parameters to MLflow
-            mlflow.log_param("k", ___)  
-            mlflow.log_param("query_text", ___)  
+            mlflow.log_param("k", k)
+            mlflow.log_param("query_text", query_text)
             
             # HINT: Perform similarity search on vector store
-            docs = self.vector_store.___(query_text, k=___) 
+            docs = self.vector_store.similarity_search(query_text, k=k)
             
             # HINT: Log metric for number of results
-            mlflow.log_metric("results_count", len(___))
+            mlflow.log_metric("results_count", len(docs))
             
             return docs, query_text
 
@@ -110,12 +110,12 @@ class TravelSearchEngine:
         with mlflow.start_run(run_name="synthesize_response"):
             # HINT: Handle case when no documents found
             if not docs:
-                return "___" 
+                return "I don't have enough information to answer that question. Please try asking something else."
             
             # HINT: Build context from documents
             # Format: "- {content} (Source: {source})"
             context = "\n".join([
-                f"- {doc.___} (Source: {doc.metadata.get('___', 'Unknown')})" 
+                f"- {doc.page_content} (Source: {doc.metadata.get('source', 'Unknown')})"
                 for doc in docs
             ])
             
@@ -125,24 +125,24 @@ class TravelSearchEngine:
             Use the following information from our knowledge base to answer the customer's question.
             
             Knowledge Base Information:
-            {___}
+            {context}
             
-            Customer Question: "{___}"
+            Customer Question: "{user_query}"
             
             Please provide a clear, helpful, and accurate answer based on the information above.
             If the information is not sufficient, let the customer know and provide general guidance.
             """  # HINT: context, user_query
             
             # HINT: Generate response using LLM
-            response = self.llm.___(___).___  
+            response = self.llm.invoke(prompt).content
             
             # HINT: Validate output using governance gate
-            gov_check = self.governance_gate.___(___) 
+            gov_check = self.governance_gate.validate_output(response)
             
-            if not gov_check['___']:  
-                return "___"  # HINT: "I generated a response but it didn't pass safety checks. Please rephrase your question."
+            if not gov_check['is_valid']:
+                return "I generated a response but it didn't pass safety checks. Please rephrase your question."
             
             # HINT: Log response to MLflow as text file
-            mlflow.log_text(___, "final_response.txt")
+            mlflow.log_text(response, "final_response.txt")
             
             return response
