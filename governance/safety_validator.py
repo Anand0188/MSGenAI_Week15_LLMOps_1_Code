@@ -8,6 +8,7 @@ RUBRIC: Governance & Compliance (10 marks total)
 
 TASK: Implement content safety and prompt injection detection
 """
+import re
 import logging
 from typing import Dict, List
 from guardrails.content_safety import ContentSafety
