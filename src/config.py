@@ -15,9 +15,9 @@ class Config:
     AZURE_OPENAI_API_KEY = os.getenv("AZURE_OPENAI_API_KEY")
     AZURE_OPENAI_ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")
     AZURE_OPENAI_API_VERSION = os.getenv("AZURE_OPENAI_API_VERSION", "2024-12-01-preview")
-    AZURE_OPENAI_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-5-mini")
-    AZURE_OPENAI_EMBEDDING_DEPLOYMENT = os.getenv(
-        "AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"
+    AZURE_OPENAI_DEPLOYMENT_NAME = os.getenv("AZURE_OPENAI_DEPLOYMENT_NAME", "gpt-4o-mini")
+    AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME = os.getenv(
+        "AZURE_OPENAI_EMBEDDING_DEPLOYMENT_NAME", "text-embedding-3-small"
     )
 
     # ====================
@@ -59,4 +59,4 @@ class Config:
     # ====================
     # Ingestion Settings
     # ====================
-    INGESTION_LIMIT = int(os.getenv("INGESTION_LIMIT", "0"))
+    INGESTION_LIMIT = int(os.getenv("INGESTION_LIMIT", "400"))

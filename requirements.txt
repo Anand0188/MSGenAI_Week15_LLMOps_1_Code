@@ -1,64 +1,68 @@
-langchain
-langchain-openai
-langchain-community
-langchain-text-splitters
-azure-search-documents
-azure-monitor-opentelemetry
-azure-identity
-azure-storage-blob
-azure-ai-evaluation
-openai
-streamlit
-python-dotenv
-pytest
-pypdf
-ragas
-scikit-learn
-Pillow
-httpx
-pandas
-mlflow<=3.5.0
-azureml-mlflow
-azure-ai-contentsafety
-pytest
-pytest-asyncio
-kaggle
-chromadb
-python-json-logger
+# ===============================
+# Core LLM Stack (Stable Combo)
+# ===============================
+langchain==0.2.16
+langchain-community==0.2.16
+langchain-openai==0.1.23
+langchain-text-splitters==0.2.4
+openai>=1.30.0
 
+# ===============================
+# Azure Services
+# ===============================
+azure-search-documents==11.4.0
+azure-identity==1.16.0
+azure-storage-blob==12.19.0
+azure-ai-contentsafety==1.0.0
 
-# langchain==0.1.0
-# langchain-openai==0.0.2
-# langchain-community==0.0.10
-# openai==1.6.1
+# ⚠️ Removed azure-monitor-opentelemetry (causes resolver explosion)
+# Add back only if strictly required.
 
-# # Azure Services
-# azure-search-documents==11.4.0
-# azure-ai-contentsafety==1.0.0
-# azure-identity==1.15.0
-# azure-monitor-opentelemetry==1.2.0
-# azure-storage-blob==12.19.0
+# ===============================
+# Data Processing (Py 3.12 Safe)
+# ===============================
+pandas==2.2.2
+numpy>=1.26.0
+scikit-learn==1.4.2
 
-# # Document Processing
-# pypdf==3.17.4
-# # pandas==2.1.4
-# pandas==1.5.3
-# # numpy==1.24.4
+# ===============================
+# Document Processing
+# ===============================
+pypdf==3.17.4
+Pillow>=10.0.0
 
+# ===============================
+# Vector DB
+# ===============================
+chromadb==0.4.24
 
-# # Web Framework
-# streamlit==1.29.0
+# ===============================
+# Web App
+# ===============================
+streamlit==1.35.0
 
-# # MLflow & Monitoring
-# mlflow<=3.5.0
-# azureml-mlflow
-# python-json-logger
+# ===============================
+# MLflow (Pinned Safe Version)
+# ===============================
+mlflow==3.5.0
+azureml-mlflow==1.55.0
+python-json-logger>=2.0.7
 
-# # Testing
-# pytest==7.4.3
-# pytest-asyncio==0.21.1
-# pytest-cov==4.1.0
+# ===============================
+# Evaluation
+# ===============================
+ragas==0.1.10
 
-# # Utilities
-# python-dotenv==1.0.0
-# tqdm==4.66.1
+# ===============================
+# Utilities
+# ===============================
+python-dotenv==1.0.1
+httpx>=0.27.0
+tqdm>=4.66.0
+
+# ===============================
+# Testing
+# ===============================
+pytest==7.4.4
+pytest-asyncio==0.23.6
+pytest-cov==4.1.0

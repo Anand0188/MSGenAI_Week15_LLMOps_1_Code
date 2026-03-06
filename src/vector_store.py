@@ -1,47 +1,79 @@
-"""
-Vector Store Configuration
-RUBRIC: Vector Store & RAG Setup (12 marks total)
-- Azure AI Search vector store initialized correctly (4 marks)
-- Azure OpenAI embeddings configured properly (4 marks)
-- LangChain AzureSearch integration is correct (4 marks)
-
-TASK: Initialize Azure AI Search vector store with embeddings
-"""
-import os
 from src.config import Config
 from langchain_community.vectorstores import AzureSearch
 
+from azure.search.documents.indexes.models import (
+    SearchField,
+    SearchFieldDataType,
+    SimpleField,
+    SearchableField,
+    VectorSearch,
+    HnswAlgorithmConfiguration,
+    VectorSearchProfile
+)
+
+
 def get_vector_store(embedding_function):
-    """
-    Returns Azure AI Search vector store (no ChromaDB option)
-    
-    HINT: This function should:
-    1. Get Azure Search credentials from Config
-    2. Validate that endpoint and key are present
-    3. Initialize AzureSearch with correct parameters
-    4. Return the vector store instance
-    
-    Args:
-        embedding_function: The LangChain embedding function to use
-    """
-    
-    # HINT: Get configuration values from Config class
+
     endpoint = Config.AZURE_SEARCH_ENDPOINT
     key = Config.AZURE_SEARCH_KEY
     index_name = Config.AZURE_SEARCH_INDEX_NAME
-    
-    # HINT: Validate that required credentials are present
+
     if not endpoint or not key:
         raise ValueError("AZURE_SEARCH_ENDPOINT and AZURE_SEARCH_KEY must be set.")
-    # HINT: Initialize AzureSearch vector store
-    # Required parameters: azure_search_endpoint, azure_search_key, 
-    # index_name, embedding_function (use .embed_query method)
+
+    # Azure Search Index Fields
+    fields = [
+        SimpleField(
+            name="id",
+            type=SearchFieldDataType.String,
+            key=True
+        ),
+
+        SearchableField(
+            name="content",
+            type=SearchFieldDataType.String
+        ),
+
+        SearchField(
+            name="content_vector",
+            type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
+            vector_search_dimensions=1536,
+            vector_search_profile_name="vector-profile"
+        ),
+
+        SearchableField(
+            name="metadata",
+            type=SearchFieldDataType.String
+        )
+    ]
+
+    # Vector Search Configuration
+    vector_search = VectorSearch(
+        algorithms=[
+            HnswAlgorithmConfiguration(
+                name="hnsw-config"
+            )
+        ],
+        profiles=[
+            VectorSearchProfile(
+                name="vector-profile",
+                algorithm_configuration_name="hnsw-config"
+            )
+        ]
+    )
+
     vector_store = AzureSearch(
         azure_search_endpoint=endpoint,
         azure_search_key=key,
         index_name=index_name,
-        embedding_function=embedding_function.embed_query
+        embedding_function=embedding_function.embed_query,
+        fields=fields,
+        vector_search=vector_search,
+        content_key="content",
+        vector_key="content_vector",
+        metadata_key="metadata"
     )
-    
-    print(f"Initialized Azure AI Search (LangChain) for index '{index_name}'")
+
+    print(f"✅ Initialized Azure AI Search index '{index_name}'")
+
     return vector_store
