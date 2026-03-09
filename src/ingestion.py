@@ -1,4 +1,16 @@
+"""
+Document Ingestion Pipeline
+RUBRIC: Document Ingestion Pipeline (8 marks total)
+- Ingestion script loads all documents (2 marks)
+- Documents are chunked properly (2 marks)
+- Batch indexing implemented (2 marks)
+- Index verification performed (2 marks)
+
+TASK: Ingest and index documents to Azure AI Search
+"""
+import os
 import time
+from pathlib import Path
 from tqdm import tqdm
 
 from src.search_engine import TravelSearchEngine
@@ -9,44 +21,56 @@ import mlflow
 
 
 def ingest_travel_documents():
-
-    print("\n🚀 Starting Travel Document Ingestion")
+    """
+    Ingests travel documents into Azure AI Search vector store
+    
+    HINT: This function should:
+    1. Initialize data loader and search engine
+    2. Load all documents
+    3. Split into chunks
+    4. Batch index to Azure Search (batch_size=50)
+    5. Verify with test query
+    """
+    print("\nStarting Travel Document Ingestion")
     print("=" * 70)
 
+    # HINT: Initialize components
     loader = TravelDataLoader()
-
+    
     try:
         engine = TravelSearchEngine()
     except Exception as e:
-        print(f"❌ Failed to initialize search engine: {e}")
+        print(f"Failed to initialize search engine: {e}")
         return
 
+    # ====================
+    # MLflow Setup (fail-safe)
+    # ====================
     mlflow_active = False
-
     if Config.MLFLOW_TRACKING_URI:
         try:
             mlflow.set_experiment(Config.MLFLOW_EXPERIMENT_NAME)
-
-            if mlflow.active_run():
-                mlflow.end_run()
-
             mlflow.start_run(run_name="document_ingestion")
             mlflow_active = True
-
         except Exception as e:
-            print(f"⚠️ MLflow disabled: {e}")
+            print(f"MLflow disabled: {e}")
 
     try:
-
-        documents = loader.load_documents()
+        # HINT: Load documents
+        documents = loader.load_all_travel_documents()
 
         if not documents:
-            print("\n⚠️ No documents found in data directory")
+            print("\nNo documents found in data directory")
+            print("\nExpected structure:")
+            print("  data/")
+            print("    ├── *.pdf   (policies, FAQs, rules)")
+            print("    └── *.csv   (routes or tabular data)")
             return
 
+        # HINT: Split into chunks
         chunks = loader.split_documents(documents)
 
-        print("\n📊 Ingestion Summary:")
+        print(f"\nIngestion Summary:")
         print(f"   Total chunks to index: {len(chunks)}")
 
         if mlflow_active:
@@ -54,32 +78,32 @@ def ingest_travel_documents():
             mlflow.log_param("chunk_size", loader.text_splitter._chunk_size)
             mlflow.log_param("chunk_overlap", loader.text_splitter._chunk_overlap)
 
-        print("\n📥 Indexing documents to Azure AI Search...")
-
+        # ====================
+        # Batch Ingestion
+        # ====================
+        print("\nIndexing documents to Azure AI Search...")
         batch_size = 50
         total_batches = (len(chunks) + batch_size - 1) // batch_size
 
         ingested_count = 0
         failed_count = 0
 
-        for batch_num, i in enumerate(range(0, len(chunks), batch_size), start=1):
-
+        # HINT: Loop through chunks in batches
+        for i in range(0, len(chunks), batch_size):
             batch = chunks[i:i + batch_size]
 
             try:
+                # HINT: Add documents to vector store
                 engine.vector_store.add_documents(batch)
-
                 ingested_count += len(batch)
-
-                time.sleep(1)
+                time.sleep(1)  # avoid rate limits
 
             except Exception as e:
-                print(f"\n❌ Error indexing batch {batch_num}: {e}")
+                print(f"\nError indexing batch {i // batch_size + 1}: {e}")
                 failed_count += len(batch)
 
-        print("\n✅ Ingestion Complete!")
+        print(f"\nIngestion Complete!")
         print(f"   Successfully indexed: {ingested_count} chunks")
-
         if failed_count > 0:
             print(f"   Failed: {failed_count} chunks")
 
@@ -87,32 +111,29 @@ def ingest_travel_documents():
             mlflow.log_metric("ingested_count", ingested_count)
             mlflow.log_metric("failed_count", failed_count)
 
-        print("\n🔍 Verifying index...")
-
+        # ====================
+        # Verification
+        # ====================
+        print("\nVerifying index...")
         test_query = "travel policies"
+        results, _ = engine.search(test_query, k=3)
 
-        results = engine.search(test_query, k=3)
-
-        if results and len(results) > 0:
-
-            print("✅ Index verification successful!")
+        if results:
+            print("Index verification successful!")
             print(f"   Test query: '{test_query}'")
             print(f"   Retrieved: {len(results)} documents")
-
         else:
-            print("⚠️ Warning: Test query returned no results")
+            print("  Warning: Test query returned no results")
 
     except Exception as e:
-
-        print(f"\n❌ Ingestion failed: {e}")
+        print(f"\nIngestion failed: {e}")
 
     finally:
-
-        if mlflow_active and mlflow.active_run():
+        if mlflow_active:
             mlflow.end_run()
 
     print("\n" + "=" * 70)
-    print("🎉 Ingestion pipeline completed!\n")
+    print("Ingestion pipeline completed!\n")
 
 
 if __name__ == "__main__":

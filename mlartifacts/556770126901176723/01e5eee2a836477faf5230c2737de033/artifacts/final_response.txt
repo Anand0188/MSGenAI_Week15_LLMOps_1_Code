@@ -1,0 +1,3 @@
+The penalty for a 'Churn Violation' in Economy Class for Air India bookings is $10 for each additional churn beyond the allowed limit of 4 bookings per passenger per segment. Therefore, if a travel agent makes more than 4 churns for the same passenger, they will incur a charge of $10 for each additional churn. 
+
+If you have any more questions or need further assistance, feel free to ask!

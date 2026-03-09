@@ -1,0 +1,5 @@
+Under Air India's GDS misuse policy, "Churning" refers to the process of making repeated bookings for the same sector or overlapping sectors for the same passenger. This can occur through a single Passenger Name Record (PNR) or across multiple PNRs on the same Global Distribution System (GDS) or various GDSs by an agent. 
+
+For bookings created in Economy Class, up to four churns are permitted. After that, a penalty of US$10 will be charged for each additional churn per passenger per segment. For Premium class bookings, the threshold is set at ten churns. The parameters used to determine churn include the same origin, destination, passenger name, and IATA code. 
+
+If you have any further questions or need more information, feel free to ask!

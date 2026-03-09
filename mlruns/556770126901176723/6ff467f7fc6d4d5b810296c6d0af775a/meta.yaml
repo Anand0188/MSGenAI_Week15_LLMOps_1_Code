@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/556770126901176723/6ff467f7fc6d4d5b810296c6d0af775a/artifacts
+end_time: 1772955066153
+entry_point_name: ''
+experiment_id: '556770126901176723'
+lifecycle_stage: active
+run_id: 6ff467f7fc6d4d5b810296c6d0af775a
+run_name: search_travel_info
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1772955065241
+status: 3
+tags: []
+user_id: codespace

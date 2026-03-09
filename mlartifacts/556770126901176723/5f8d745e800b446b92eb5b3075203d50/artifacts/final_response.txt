@@ -1,0 +1,3 @@
+No, Air India does not allow a name change on a PNR once it has been created by a travel agent. Once the booking is made, changes to the name field are not permitted. If there is a misspelling in the name, you must contact Air India Reservation offices for assistance, and they may consider the request on a case-by-case basis. However, the maximum number of characters that can be changed is limited to three, and such changes must be made at least 72 hours before the departure time. 
+
+If the name has been entered incorrectly after ticketing, a new PNR must be created with the correct name, and the original itinerary must match exactly. Please keep in mind that this process must also comply with Air India's name change policies.

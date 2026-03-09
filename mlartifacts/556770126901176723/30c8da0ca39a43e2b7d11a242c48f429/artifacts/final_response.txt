@@ -1,0 +1,3 @@
+If a passenger's bag is delayed on an international flight with a duration of 14 hours, the delay threshold for a mandatory baggage fee refund under Department of Transportation (DOT) rules is 30 hours. This applies because the flight segment between the United States and the foreign point is over 12 hours in duration, allowing for a longer timeframe to recover delayed bags without having to refund the baggage fees. 
+
+If the bag is not delivered within 30 hours after the flight's arrival at the gate, and the passenger has filed a Mishandled Baggage Report, a refund of the baggage fee would be due.

@@ -1,166 +1,80 @@
 """
-Content Safety Guardrail
-RUBRIC: Guardrails Implementation (10 marks total)
-- Content safety guardrail implemented (5 marks)
-- PII detection guardrail implemented (5 marks)
+Content Safety Checker
+RUBRIC: Governance & Guardrails - Content safety checks (2 marks)
 
-TASK: Implement keyword-based content filtering
+TASK: Implement keyword-based content safety checking
 """
-import re
+
 import logging
-from typing import Dict, List, Any
+from typing import Dict, List
+
+logger = logging.getLogger(__name__)
 
 class ContentSafety:
-    """Content safety guardrail using keyword-based filtering"""
+    """Checks content for safety violations"""
     
     def __init__(self):
-        """
-        Initialize content safety with keyword patterns
+        # HINT: Define unsafe keyword patterns for different categories
+        self.unsafe_patterns = {
+            'violence': ['kill', 'attack', 'murder', 'violence', 'harm', 'dangerous'],  # HINT: List of violence-related keywords like ['kill', 'attack', etc.]
+            'hate_speech': ['hate', 'racist', 'discriminate', 'offensive', 'slur'],  # HINT: List of hate speech keywords like
+            'profanity': ['swear', 'curse', 'damn', 'hell', 'shit', 'fuck'],  # HINT: List of profanity keywords
+            'personal_attack': ['insult', 'mock', 'belittle', 'humiliate', 'attack']  # HINT: List of personal attack keywords like
+        }
         
-        HINT: Define keyword patterns for different content categories
-        """
-        # HINT: Define hate speech patterns
-        self.hate_speech_patterns = [
-            r"(?i)\b(nigger|nigga|kike|fag|faggot|chink|gook|spic|wetback)\b",
-            r"(?i)\b(racist|white supremacist|neo-nazi|kkk)\b",
-            r"(?i)\b(hate group|terrorist|extremist)\b"
-        ]
-        
-        # HINT: Define self-harm patterns
-        self.self_harm_patterns = [
-            r"(?i)\b(suicide|kill myself|end my life|hang myself)\b",
-            r"(?i)\b(overdose|cut myself|self harm)\b",
-            r"(?i)\b(please let me die|I want to die)\b"
-        ]
-        
-        # HINT: Define sexual content patterns
-        self.sexual_content_patterns = [
-            r"(?i)\b(porn|xxx|nude|naked|sexual|erotic)\b",
-            r"(?i)\b(sex act|sexual content|adult content)\b",
-            r"(?i)\b(pornographic|explicit content)\b"
-        ]
-        
-        # HINT: Define violence patterns
-        self.violence_patterns = [
-            r"(?i)\b(murder|kill|assassinate|execute|torture)\b",
-            r"(?i)\b(violence|brutality|cruelty|torture)\b",
-            r"(?i)\b(weapon|gun|knife|explosive)\b"
-        ]
-        
-        # HINT: Set up logging
-        self.logger = logging.getLogger(__name__)
+        # HINT: Define travel-specific red flags
+        self.travel_red_flags = ['fraud', 'fake booking', 'scam', 'fake', 'fraudulent', 'bogus']  # HINT: List like ['fraud', 'fake booking', 'scam', etc.]
     
-    def check_content(self, text: str) -> Dict[str, Dict[str, Any]]:
+    def check(self, text: str) -> Dict:
         """
-        Check text for unsafe content across multiple categories
+        Check text for safety violations
         
-        HINT: Check each content category and return results
+        HINT: This method should:
+        1. Convert text to lowercase
+        2. Initialize empty flags list
+        3. Check text against unsafe_patterns
+        4. Check text against travel_red_flags
+        5. Return dict with is_safe, flags, severity
         """
-        results = {}
+        text_lower = text.lower()  # HINT: .lower()
+        flags = []
         
-        # HINT: Check hate speech
-        results["hate_speech"] = self._check_category(text, self.hate_speech_patterns, "hate_speech")
+        # HINT: Check general unsafe patterns
+        for category, keywords in self.unsafe_patterns.items(): 
+            for keyword in keywords:
+                if keyword in text_lower:  
+                    flags.append({
+                        'category': category, 
+                        'keyword': keyword,   
+                        'severity': 'high' if category in ['violence', 'hate_speech'] else 'medium' if category == 'profanity' else 'low' # HINT: 'high' for violence/hate speech, 'medium' for profanity, 'low' for personal attack
+                    })
         
-        # HINT: Check self-harm
-        results["self_harm"] = self._check_category(text, self.self_harm_patterns, "self_harm")
-        
-        # HINT: Check sexual content
-        results["sexual_content"] = self._check_category(text, self.sexual_content_patterns, "sexual_content")
-        
-        # HINT: Check violence
-        results["violence"] = self._check_category(text, self.violence_patterns, "violence")
-        
-        return results
-    
-    def _check_category(self, text: str, patterns: List[str], category: str) -> Dict[str, Any]:
-        """
-        Check text against patterns for a specific category
-        
-        HINT: Return dict with flagged status, severity, and details
-        """
-        violations = []
-        
-        # HINT: Check each pattern
-        for pattern in patterns:
-            matches = re.findall(pattern, text)
-            if matches:
-                violations.extend(matches)
-        
-        # HINT: Determine severity based on violation count
-        if len(violations) == 0:
-            severity = "none"
-            flagged = False
-        elif len(violations) <= 2:
-            severity = "low"
-            flagged = True
-        elif len(violations) <= 5:
-            severity = "medium"
-            flagged = True
-        else:
-            severity = "high"
-            flagged = True
-        
-        # HINT: Log content check
-        if flagged:
-            self.logger.warning(f"Content safety violation in {category}: {violations}")
+        # HINT: Check travel-specific red flags
+        for red_flag in self.travel_red_flags: 
+            if red_flag in text_lower:
+                flags.append({
+                    'category': 'travel_red_flag', 
+                    'keyword': red_flag,  
+                    'severity': 'medium' 
+                })
         
         return {
-            "flagged": flagged,
-            "severity": severity,
-            "violations": violations,
-            "details": {
-                "category": category,
-                "pattern_count": len(patterns),
-                "match_count": len(violations)
-            }
+            'is_safe': len(flags) == 0, 
+            'flags': flags,    
+            'severity': 'high' if any(flag['severity'] == 'high' for flag in flags) else 'medium' if any(flag['severity'] == 'medium' for flag in flags) else 'low'  
         }
     
-    def is_content_safe(self, text: str) -> bool:
+    def get_safety_score(self, text: str) -> float:
         """
-        Quick check if content is safe
+        Calculate safety score (0-1)
         
-        HINT: Return True if no violations found in any category
+        HINT: Return 1.0 if safe, otherwise reduce by 0.2 per flag (minimum 0.0)
         """
-        results = self.check_content(text)
+        result = self.check(text) 
         
-        # HINT: Check if any category is flagged
-        for category_result in results.values():
-            if category_result["flagged"]:
-                return False
+        if result['is_safe']:  
+            return 1.0 
         
-        return True
-    
-    def get_violation_summary(self, text: str) -> Dict[str, Any]:
-        """
-        Get summary of all violations found
-        
-        HINT: Return summary with total violations and categories affected
-        """
-        results = self.check_content(text)
-        
-        # HINT: Count violations by category
-        violations_by_category = {}
-        total_violations = 0
-        
-        for category, result in results.items():
-            if result["flagged"]:
-                violations_by_category[category] = result["violations"]
-                total_violations += len(result["violations"])
-        
-        # HINT: Determine overall severity
-        if total_violations == 0:
-            overall_severity = "none"
-        elif total_violations <= 3:
-            overall_severity = "low"
-        elif total_violations <= 8:
-            overall_severity = "medium"
-        else:
-            overall_severity = "high"
-        
-        return {
-            "total_violations": total_violations,
-            "violations_by_category": violations_by_category,
-            "categories_affected": list(violations_by_category.keys()),
-            "overall_severity": overall_severity,
-            "is_safe": total_violations == 0
-        }
+        # HINT: Reduce score based on violations
+        penalty = 0.2 * len(result['flags'])  
+        return max(0.0, 1.0 - penalty)

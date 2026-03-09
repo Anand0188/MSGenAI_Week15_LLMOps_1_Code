@@ -1,0 +1,437 @@
+question,ground_truth,answer,contexts
+What is the specific reimbursement percentage for an Air India passenger who is involuntarily downgraded on a domestic flight?,"The carrier shall reimburse the passenger 75% of the cost of the ticket, including applicable taxes.","The information provided does not specify the exact reimbursement percentage for an Air India passenger who is involuntarily downgraded on a domestic flight. However, it does mention that laws in other jurisdictions, such as EC261, require carriers to refund between 30% to 75% of the ticket price, depending on the distance of the flight, for downgraded passengers who continue their journey.
+
+For specific information related to Air India's policies on involuntary downgrades, I recommend checking directly with Air India or reviewing their customer service guidelines. If you need further assistance, please let me know!","6 Waitlist  Ticketed  US$ 10  
+7 Invalid Booking class   US$ 10  
+8 Inactive segments   US$ 10  
+9 HX segments   US$ 30  
+9 Other Misuse  Married Segment Violations – $1000 per passenger segment  US$ 10  
+10 Holding inventory without 
+End Transaction   US$ 100  
+All Penalties are on per passenger segment  
+Air India reserves the right to raise ADMs for reasons not specified in this document on its discretion. Air India also 
+reserves rights to amend our policies and debit memo charges, when deemed necessary.  
+ 
+An Admin fee equal to 10.5% of the total ADM value will be charged in addition to the 
+above fee structure for ADMs raised for identified abusive practices from 01st Oct 2023 
+Applicable GST @18% will be charged to the admin fee as well as to the ADM value f or 
+the ADM issued in India effective 01st October 2023. | requiring airlines and ticket agents to provide a refund to passengers who are downgraded to a lower class of service conflicts with the laws of other jurisdictions, including EC261. Like the 
+Department’s oversales rule that requires carriers to refund the fare differences to passengers who are continuing to travel on a lower class of service, EC261 requires that carriers refund between 30% to 75% of the ticket price, depending on the distance of the flight, to a downgraded passenger who is continuing the flight. In contrast, this final rule simply addresses the 
+situation in which the passenger chooses not to travel on the original or rebooked flight in a lower class of service, a situation that is not directly addressed in EC261. 
+As suggested by IATA, the | representatives opposed the Department’s proposal of considering a downgrade of the class of service a significant change, arguing that it would disincentivize carriers from rebooking affected passengers on the same aircraft but in a lower class of service. They expressed their belief that a downgrade to a lower class of service should only result in a refund of the fare differences because the passenger would be provided with the flight as scheduled. IATA stated that if this proposal is adopted, minors and companions traveling with the downgraded passenger should not be eligible for a refund if they were not downgraded as well. This position was supported by Qatar Airways. IATA further requested that the Department define a change in ‘‘class of service’’ as a change of cabin to avoid any confusion. Air Canada suggested that the proposal, if adopted, would conflict with certain provisions of EC 261/2004, which requires compensation as opposed to refunds for certain downgrades. SATA"
+Does Air India allow a name change on a PNR once it has been created by a travel agent?,"No, changing the name field once a PNR is created is not permitted. Travel providers must contact Air India Reservation offices for assistance with misspellings (limited to a maximum of 3 characters) on a case-to-case basis.","No, Air India does not allow a name change on a PNR once it has been created by a travel agent. Once the booking is made, the name elements provided must match the travel document, and modifications to the name field are not permitted. If there is a misspelling, it is advised to contact Air India Reservation offices for assistance, as they may consider requests on a case-by-case basis, but name changes must be made at least 72 hours before the departure time.","Page3 General booking and ticketing policies  
+This part of the document covers general rules which Air India expects travel agents to 
+follow while booking AI sectors and ticket them. This will also give the travel agent a clear 
+understanding on Air India policies on ticketing related misuse.  
+Name Change  
+All Air India reservations require a valid first and last name of the passengers along with 
+the title. The name elements provided shall match the name provided in their travel 
+document (Passport, Approved government ID).  
+Changing of name field once PNR is created is not permitted.  
+Do not perform Name modifications or cancel and replace Names in the PNRs through 
+GDS channels or airline website once booking has been done.  
+Contact Air India Reservation offices for assistance with misspellings to avoid cancellation 
+of space. Air India may consider the request on case -to-case basis. The maximum number | Contact Air India Reservation offices for assistance with misspellings to avoid cancellation 
+of space. Air India may consider the request on case -to-case basis. The maximum number 
+of characters that could be changed is limited to three (3). Travel provider  shall provide 
+with requested supporting documents.  
+Name changes shall be made at least 72 hours before departure time.  
+Name Change after Ticketing  
+Once ticketed, If the agent or guest identifies the name has been entered erroneously in 
+the ticket, please ensure below after ensuring the changes are within the scope of name  
+change policies mentioned above.  
+1) New PNR to be created by the correct name.  
+2) Exact match of old itinerary.  
+3) Issue a new ticket with the correct name.  
+4) If originally booked RBD is not available, book in available class and request airline 
+helpdesk for RBD change assistance.  
+5) Cross reference of PNRs in endorsement to avoid ADM. | Page4 Important Information – Name change Fee  
+A nominal fee will be charged for name changes originating from Point -of-Sale locations 
+in the United Kingdom, Europe, and Israel. For specific details regarding the fee structure, 
+please refer to the following information.  
+POS  Fee 
+UK 50 GBP  
+Europe  50 EUR  
+Israel  50 USD  
+ 
+Schedule Change  
+Voluntary Schedule Change –When a passenger chooses to modify their booked schedule, 
+the applicable fare rules will be enforced.  
+Involuntary Schedule change – When the airline modifies schedule due to operational 
+reasons.  
+The involuntary Schedule changes will be dealt according to provisions of the airline 
+regulator.  
+Booking  violation s 
+Air India enforces strict measures against travel partners who manipulate reservation 
+systems. Violations include breaking married segments, booking out -of-sequence 
+segments, and OnD violations . 
+Out of sequence segments  – Air India requires that PNRs be booked in a sequential"
+"According to Air India's waiver policy, what is the time threshold for a domestic flight reschedule to qualify for a full refund?",A domestic flight (not connected with an international flight) must be rescheduled for more than 1 hour.,"According to Air India's waiver policy, a domestic flight reschedule qualifies for a full refund if the reschedule is for more than 1 hour. To ensure you receive the full refund, you must insert the appropriate remarks in the coupon or OSI field in the booking PNR and ensure the entire booking is cancelled. If you have any further questions or need assistance with your booking, feel free to ask!","flight more than 3 hours or missing onward connection ) / (Domestic only 
+- for more than one hour)   
+i) Cancellation charge waived .  
+ii) For full refund , insert in coupon remark or in OSI field in booking PNR  
+:  OSI : AI CANCEL / AI ### / DDMMYY  
+For example,  AI 130 / 01NOV21 is cancelled , for full refund insert waiver :   
+AI CANCEL / AI 130 / 01NOV21  
+iii)  Agent can process refund on GDS .  
+iv) Please ensure entire booking is cancelled to avail full refund . | Air India  
+ 
+Please find below waiver to handle booking of cancelled or reschedule flights :  
+         
+1) When International flight are rescheduled for more than 3 hours or passenger 
+missing onward connection ( in case rescheduling is less than 3 hours) . 
+2) When Domestic flight ( not connected with international  flight ) is res cheduled 
+for more than 1 hour .  For ex BOM GOI or DEL IXC ( only domestic travel 
+within India )   
+3) AI Flight is cancelled .  
+4) When Non stop direct flight is cancelled and passenger offered indirect flight 
+via DEL OR BO M.  
+ 
+1) Ticket re issuance due flight res cheduled or cancelled :  
+ 
+      Silent feature while re issuing tickets in your agency for rescheduled flight or 
+cancelled flight .  
+a) Date / flight change charges are waived .   
+b) Original / final destination has to be same as original ticketed .  
+c) Passenger to  be rebooked on first available flight . | delay that would trigger the refund requirement as not later than 12 hours after arrival for domestic flights and not later than 15 hours after arrival for international flights. It also provides the Department the flexibility to modify these timeframes to up to 18 hours for domestic flights and up to 30 hours for international flights if the Department"
+What is the penalty for a 'Churn Violation' in Economy Class for Air India bookings after the allowed limit is exceeded?,"4 churns are permitted for Economy Class. Thereafter, an Agency Debit Memo (ADM) of US$10 would be charged for each additional churn done per passenger per segment.","The penalty for a 'Churn Violation' in Economy Class for Air India bookings is as follows: 
+
+After the allowed limit of 4 churns is exceeded, an ADM (Agency Debit Memo) of US$10 will be charged for each additional churn done per passenger per segment. 
+
+If you have any further questions or need additional assistance, feel free to ask!","Page13 Global Distribution Systems (GDS) Misuse Policy  
+Apart from the above, various booking violations done through GDS for which ADMs or 
+invoices are raised as per IATA Resolutions 824, 830a, 850m, 852, 890, 838 and 049x. are 
+as follows.  
+ 
+Churn Violation  
+Churning refers to the process of repeated bookings for same sector or overlapping sectors 
+for same passenger through a PNR or across multiple PNRs (Passenger Name Record) on 
+same GDS or across various GDS’s by an agent. For bookings created in Economy Cla ss 4 
+(four) churns will be permitted. Thereafter ADM of US$10 would be charged for each 
+additional churn done per passenger per segment. For Premium class bookings the 
+threshold is set at 10. Parameters for judging churn will include same - origin, destination, 
+passenger name, IATA code.  
+ 
+Duplicate Booking Violation  
+All multiple active bookings for a passenger with same origin & destination, segment date, | Page17  
+ 
+Raising of ADMs: Penalty for booking violations  
+Air India carries out regular audit of all booking transactions and reserves the right to raise 
+ADMs or Invoices, in order to recover excess GDS cost, to travel agents for non -compliant 
+booking practices. If the travel agent is found continuing with such p ractices, then Air India 
+reserves the right to take additional actions including blocking access of travel agent to Air 
+India’s inventory.  
+ 
+ADM or Invoice Fee structure for various Booking violations.  
+No Types of Misuse  Exceptions  Penalty  
+1 Churning  Up to 4 in Economy Class and 10 in Premium  US$ 10  
+2 Duplicates  If clarification is provided or if removed on time  US$ 10  
+3 Hidden Groups  Ticketed  US$ 10  
+4 Passive bookings  Ticketed  US$ 10  
+5 Speculative Bookings  If clarification is provided or removed in time  US$ 10  
+6 Waitlist  Ticketed  US$ 10  
+7 Invalid Booking class   US$ 10  
+8 Inactive segments   US$ 10  
+9 HX segments   US$ 30 | violation. Continued abuse will lead to permenant block.  
+An ADM of UD$100 per passenger segment will be raised.  
+ 
+Inactive Segments  
+Inactive segments are segments in a PNR affected by a time limit, schedule change or 
+flight cancellation or response to a non -direct sell. Inactive segments are sent to the Travel 
+Service Provider’s queue in the GDS/CRS and can be identified with a status code of 
+UC/UN/US/NO/HX/HN/HL/PN. All inactive segments must be cancelled or removed from 
+the GDS / CRS PNR at least 48 hours prior departure.  
+Inactive segments that are not cancelled or removed 48 hours prior to departure are 
+subject to Cost recovery fee charges from Air India in form of ADM worth US$ 10 for every 
+such segment.  
+ 
+Specifically, segments with the status code HX that are retained will incur a penalty of 
+USD 30 per passenger segment. If HX segments are not removed by the end of the billing"
+Is a ticket void allowed for domestic travel within India if the flight departs 5 days after ticket issuance?,"No. Void is NOT allowed for tickets with only Domestic travel within India, if the first flight departs within 7 days of ticket issuance.",I generated a response but it didn't pass safety checks. Please rephrase your question.,"• Issuance of documents and voiding the same without adequate and valid reasons. 
+Any misuse of void documents will result in a penalty of US $ 20.  
+ 
+Void Policy  
+Effective 15th October 2025  Air India allows ticket voiding under the following conditions:  
+1. Eligibility:  
+• Tickets issued through any Point of Sale (POS), including the USA.  
+• Tickets that include both Domestic and International travel segments.  
+2. Exceptions:  
+• Void is NOT allowed for tickets with only Domestic travel within India, if the first 
+flight departs within 7 days of ticket issuance.  
+3. Non-Compliance:  
+If this policy is violated, debit memos will be issued to the booking or ticketing agents. 
+These will include:  
+• Applicable cancellation or no -show charges  
+• Administrative fees and GST as per Air India’s policy | India document whereby, during the period of 24 (twenty -four) hours after booking tickets, the Passenger can 
+cancel or amend the ticket without any ad ditional charges, except for the normal prevailing fare and any 
+government imposed taxes and charges for the revised flight for which the ticket is sought to be amended. 
+The Passenger would accordingly be required to pay an increase in fare and government imposed taxes and 
+charges between the original booking and revised booking. This facility shall not be available for a flight 
+whose departure is less than 7 (seven) days from the booking date. Beyond 24 (twenty -four) hours of initial 
+booking time, this opt ion is not available, and the Passenger has to pay the relevant cancellation fees for 
+amendment.  
+Passengers  can reach out  to [+91  116 932 9333  or +91  116 932 9999]  for assistance.  
+6.2 TICKETING  TIME  LIMITS | Page5 Ticketing Policy  
+Please adhere to the time limits set by Air India. Ensure that tickets are issued well before 
+the given time limit to allow for sufficient time to check and confirm that all details are 
+accurate.  
+Travel agents must always use real -time fares available in your GDS system rather than 
+using stored fares. With all fares being filed and available through GDS channels, it is 
+strongly recommended to use auto pricing and discouraged from utilizing manual p ricing 
+while issuing tickets. Documents issued using manual pricing may incur Agent Debit 
+Memos (ADMs)  
+Please note that for domestic itineraries booked in G or H classes , auto pricing must be 
+used. Manual pricing of itineraries booked in these classes for domestic sectors is strictly 
+prohibited . 
+Reissuance in other currency  
+If the ticket is reissued and the ADC (fare difference/penalty) is in a currency other than the"
+"Under the new DOT final rule, how many days does a carrier have to issue a refund for a ticket purchased with a credit card?",Airlines and ticket agents must provide refunds for tickets purchased with credit cards within 7 business days of refunds becoming due.,"Under the new DOT final rule, a carrier is required to issue a refund for a ticket purchased with a credit card within **7 business days** of the expiration of the baggage delivery deadline, or within 7 business days of the date when a Major Baggage Report (MBR) is filed if it was not filed before the expiration. If you have any further questions or need assistance with your travel plans, feel free to ask!","issued within 7 business days of the expiration of the baggage delivery deadline for tickets purchased with credit cards or 20 calendar days of the expiration of the baggage delivery deadline for tickets purchased with other payments, unless the consumer did not file an MBR before the expiration of the baggage delivery deadline, in which case the refund is due within 7 or 20 days of the date when the MBR was filed. The Department notes that its requirement for carriers to refund baggage fees within 7 business days for credit card purchases and 20 calendar days for purchases with other payments is consistent with the Department’s existing refund regulation in 14 CFR 259.5 and 14 CFR part 374. The requirement in part 374, which implements Regulation Z’s 7-day refund timeline for credit card payments applies to all airline transactions for which refunds are due, not just ticket refunds. The Department disagrees with airline commenters that investigations of refund eligibility involving | 32786 Federal Register / Vol. 89, No. 82 / Friday, April 26, 2024 / Rules and Regulations 
+53See fn. 29, supra. requirement concerning providing 
+refunds within 20 days for purchases paid by a payment other than a credit card. As is the case currently, the Department is continuing to require airlines and ticket agents to provide refunds for non-credit card purchases within 20 calendar days. The Department has amended the regulation text accordingly. 
+7. Amount and Form of Refunds 
+The NPRM: Under the NPRM, when 
+ticket refunds are due because of a | 7 business days for credit card payments and within 20 calendar days for other forms of payment. To ensure consumers know when they are entitled to a refund, the Department is requiring carriers and ticket agents to inform consumers of their right to a refund if that is the case before making an offer for alternative transportation, travel credits, vouchers, or other compensation in lieu of refunds. Also, the Department is defining, for the first time, the terms ‘‘significant change’’ and ‘‘cancellation’’ to provide clarity and consistency to consumers with respect to their right to a refund. The Department is also requiring refunds to consumers for fees for ancillary services that passengers paid for but did not receive and for checked baggage fees if the bag is significantly delayed. For consumers who are unable to or advised not to travel as scheduled on flights to, from, or within the United States because of a serious communicable disease, the Department is requiring that"
+How does the DOT define a 'significant change' for an international flight's arrival time?,A significant change occurs if the passenger is scheduled to arrive at the destination airport six hours or more later than the original scheduled arrival time.,"The Department of Transportation (DOT) defines a ""significant change"" for an international flight's arrival time as any change that exceeds six hours from the originally scheduled arrival time. This is part of a proposed approach which sets a specific timeline for significant departure and arrival time changes. Additionally, a significant change can also involve other factors, such as an increase in layover time by more than one hour or an increase in the number of connections in a flight itinerary. 
+
+If you have more specific questions or need further assistance, feel free to ask!","continuing to provide airlines the flexibility to define significant flight schedule time change is a better option than the proposed approach (option 1) of defining a significant departure or arrival change to mean beyond three hours for domestic flights and six hours for international flights. 
+A third approach considered by the 
+Department is to define significant departure and arrival time change through the adoption of a tiered structure based on objective factors such as the total travel time of an itinerary. The NPRM provided an example of a tiered standard using the illustration below. 
+Original scheduled total travel time 
+(measured from the scheduled departure time of the first flight 
+segment to the scheduled arrival time of the last flight segment) Projected arrival delay or early 
+departure as offered to passenger Result | 32771 Federal Register / Vol. 89, No. 82 / Friday, April 26, 2024 / Rules and Regulations 
+would qualify as ‘‘significant changes.’’ 
+The first option, which the NPRM proposed, is a set timeline of three hours applicable to domestic itineraries and another set timeline of six hours applicable to international itineraries that would constitute a significant departure and arrival time change. The NPRM emphasized that airlines and ticket agents would be free to apply a shorter timeframe that constitutes a significant departure or arrival change but would not be able to increase it beyond three hours for domestic flights and six hours for international flights. | layover time by more than one hour is a significant change. 
+DOT Responses: The Department has 
+decided to include an increase in the number of connections in a flight itinerary in the definition of ‘‘significant change of flight itinerary.’’ The Department finds the comments by PVA and United Spinal Association about the substantial inconveniences, and in some 
+VerDate Sep<11>2014 20:43 Apr 25, 2024 Jkt 262001 PO 00000 Frm 00016 Fmt 4701 Sfmt 4700 E:\FR\FM\26APR3.SGM 26APR3ddrumheller on DSK120RN23PROD with RULES3"
+"If a passenger's bag is delayed on an international flight with a duration of 14 hours, what is the delay threshold for a mandatory baggage fee refund under DOT rules?","For international itineraries where the flight duration is over 12 hours, a refund of baggage fee is due when the airline fails to deliver the checked bag within 30 hours of the consumer's flight arriving at the gate.","For an international flight with a duration of 14 hours, the delay threshold for a mandatory baggage fee refund under Department of Transportation (DOT) rules is 15 hours. If the airline fails to deliver the checked bag to the passenger within this timeframe, the passenger is entitled to a refund of the baggage fee.","considering the comments, the Department is requiring carriers to refund the bag fee if a checked bag is delayed the minimum statutory standard of 12-hours for domestic flights as proposed, the minimum statutory standard of 15-hours for an international flight that is 12 hours or less, and the maximum statutory standard of 30- hours for an international flight that is more than 12 hours. The Department appreciates consumer rights advocacy groups’ comments that urge the Department to adopt a ‘‘zero hour’’ standard for delayed bags. While we agree that the Department has broad authority under 49 U.S.C. 41712 to define unfair or deceptive practices, 49 U.S.C. 41704 note imposes a specific requirement on the Department with regard to airlines’ refund of delayed baggage fees. Specifically, the Department is directed to require U.S. and foreign carriers to provide a refund for any fees paid by a passenger for checked baggage if the carriers fail to deliver the bag to passengers within 12 to | This rule implements a 2016 statutory 
+mandate and requires that airlines refund baggage fees when a bag is delivered to a consumer with a delay of 12 hours or more for domestic flights, 15 hours for international flights with a duration of 12 hours or less, and 30 hours for international flights with a duration of over 12 hours. The final rule also implements a 2018 mandate and requires airlines to refund fees collected for ancillary services they fail to provide. The expected economic impacts of these provisions consist of $16.0 million annually in increased refunds to consumers and $7.1 million annually in administrative costs for the airlines. 
+The final rule requires airlines to | baggage fees. For all these reasons, the Department is not requiring ticket agents to provide refunds of baggage fees for significantly delayed bags in this final rule. The Department will continue to monitor the transactions of baggage fees and other ancillary service fees conducted by ticket agents and intends to revisit the issue in its rulemaking requiring ticket agents with an annual revenue of at least $100 million to adopt minimum customer service standards, as required by 49 U.S.C. 42301 note prec.
+60 
+2. Length of Delay Triggering Baggage Fee Refund Requirement 
+The NPRM: The Department proposed 
+to require an airline refund the fee paid by a passenger for a checked bag if the airline fails to deliver the bag to the passenger within 12 hours of arrival for domestic flights and within 25 hours of arrival for international flights. 49 U.S.C. 41704 note prescribes the minimum lengths of baggage delivery"
+What are the mandatory characteristics of a travel voucher issued to a passenger who cannot fly due to a serious communicable disease?,The voucher or credit must be transferrable and valid for at least 5 years from the date of issuance.,"If a passenger is unable to fly due to a serious communicable disease, the mandatory characteristics of the travel voucher issued by airlines are as follows:
+
+1. **Transferability**: The travel voucher must be transferable, allowing the passenger to transfer it to another individual if desired.
+
+2. **Validity Period**: The travel voucher must be valid for at least 5 years from the date of issuance.
+
+It's important to note that passengers may need to provide documentary evidence to support their request for a travel voucher or credit, demonstrating their inability to travel or that they have been advised not to travel due to health concerns related to the communicable disease. 
+
+If you have further questions or need assistance with a specific situation, feel free to ask!","Requirement to Prepare and Submit to 
+Airlines Documentations Demonstrating a Passenger is Eligible for Travel Credits or Vouchers Due to a Reason Related to A Serious Communicable Disease. 
+Respondents: Passengers prohibited 
+or required to quarantine for a substantial portion of the trip by a governmental entity in relation to a serious communicable disease, passengers advised by a licensed treating medical professional not to 
+travel by air because they have or may have contracted a serious communicable disease such that their travel would pose a threat to the health of others, and passengers advised by a licensed treating medical professional not to travel to protect themselves from a serious communicable disease during a public health emergency. 
+Number of Respondents: The number | For consumers who are unable to or advised not to travel as scheduled on flights to, from, or within the United States because of a serious communicable disease, the Department is requiring that carriers provide travel vouchers or credits that are transferrable and valid for at least 5 years from the date of issuance. Carriers may require consumers to provide documentary evidence demonstrating that they are unable to travel or have been advised not to travel to support their request for a travel voucher or credit, unless the Department of Health and Human Services (HHS) publishes guidance declaring that requiring such documentary evidence is not in the public interest. DATES : This rule is effective June 25, | unable or advised not to travel because of a serious communicable disease by requiring that carriers provide these consumers travel vouchers or credits that are transferrable and valid for at least 5 years from the date of issuance."
+Can a ticket agent retain a service fee if a flight is cancelled and the passenger is entitled to a refund?,"Yes, a ticket agent may retain the service fee charged when issuing the original ticket if the service provided is for more than processing payment and the non-refundable nature of the fee was clearly disclosed at the time of purchase.","Yes, a ticket agent can retain a service fee even if a flight is canceled and the passenger is entitled to a refund. According to the regulations, ticket agents are allowed to keep the service fee charged for issuing the original ticket as long as the fee is on a per-passenger basis and was clearly disclosed to consumers at the time of purchase. This service charge is considered separate from the ticket's value and reflects the cost of services already provided by the ticket agent.
+
+However, it's important to note that if the airline cancels or significantly changes a flight, the carrier cannot retain a processing fee for issuing the required refund. In such cases, consumers are entitled to a full refund of the ticket price, but the service fee may still be retained by the ticket agent if it meets the specified conditions.","individual using whatever payment method the individual used to make the original payment, such as a check, a credit card, a debit card, cash, or airline miles), unless the consumer agrees to receive the refund in another form of payment that is cash equivalent. A ticket agent may retain a service fee charged when issuing the original ticket to the extent that service is for more than processing payment for a flight that the consumer found. That fee must be on a per-passenger basis and its existence, amount, and the non- refundable nature if that is the case must be clearly and prominently disclosed to consumers at the time they purchase the airfare. Ticket agents may offer alternative transportation, travel credits, vouchers, or other compensation in lieu of refunds, but must first inform consumers that they are entitled to a refund if that is the case. Ticket agents must clearly disclose any material restrictions, conditions, and limitations on travel credits, vouchers, or other | events). The Department is of the view that, even in situations where the consumer did not travel because of a canceled or significantly changed flight, it is reasonable for ticket agents to retain service charges related to issuing the original tickets to the extent the service charge is not simply for processing payment for a flight that the consumer found. The Department views this service as being independent of the value of the ticket. Also, regardless of whether the passenger travels, the fee represents the cost of service already provided by ticket agents. Under this final rule, ticket agents may retain this type of service charge even if the passenger did not travel due to an airline cancellation or significant change so long as the nature and amount of these fees are clearly and prominently disclosed to consumers when they purchase the tickets, and they are assessed on a per-passenger basis. 
+The Department’s Office of Aviation | Service Fees by Ticket Agents for Issuing Tick-
+ets.Amend 14 CFR part 399 to allow ticket agents to retain the service fee charged when issuing 
+the original ticket if the service provided is for more than processing payment for a flight that the consumer found and so long as the fee is on a per-passenger basis and the existence, amount, and the non-refundable nature of the fee if this is the case, is clearly and promi-nently disclosed to consumers at the time they purchase the airfare. 
+Processing Fees for Issuing Refunds, Credits, 
+or Vouchers.Retaining Processing Fee for Required Refunds: Add 14 CFR part 260 to prohibit carriers 
+from retaining a processing fee for issuing required refunds when the carrier cancels or sig-nificantly changes a flight. 
+Processing Fee for Issuing Required Credits or Vouchers: Add 14 CFR part 262 to allow air-"
+Which countries require the disinsection of all in-bound flights using an aerosolized spray while passengers are on board?,"The countries include Ecuador (Galapagos and Interislands), Grenada, Guyana, India, Kiribati, Madagascar, Panama, Seychelles, Tanzania, Timor-Leste, Trinidad and Tobago, Uruguay, and Zimbabwe.",I generated a response but it didn't pass safety checks. Please rephrase your question.,"ensure that this list is accurate and up to date. 
+ Countries requiring the disinsection of all in-bound flights with an 
+ aerosolized spray while passengers are on board: 
+ ●  Ecuador (only Galapagos and Interislands) | ●  Grenada 
+ ●  Guyana 
+ ●  India 
+ ●  Kiribati 
+ ●  Madagascar 
+ ●  Panama 
+ ●  Seychelles 
+ ●  Tanzania 
+ ●  Timor-Leste 
+ ●  Trinidad and Tobago 
+ ●  Uruguay 
+ ●  Zimbabwe 
+ Countries requiring the disinsection of all in-bound flights but allowing, as 
+ an alternative to the above approach, either (a) the residual method or (b) 
+ the application of an aerosolized spray while passengers are not on board. 
+ Country  Method 
+ Australia  Residual 
+ Barbados  Residual 
+ Chile  Residual 
+ Cook Islands  Residual 
+ Fiji  Residual | concluded that aircraft disinsection, if performed appropriately, would not 
+ present a risk to human health, the report also noted that some individuals 
+ may experience transient discomfort following aircraft disinsection by 
+ aerosol application. 
+ Under the Chicago Convention, which governs international civil aviation, a 
+ country could impose a disinsection requirement should they perceive a 
+ threat to their public health, agriculture or environment. Accordingly, 
+ travelers are advised to check with their travel agent or airline reservations 
+ agent when booking flights or if they have questions about their final 
+ destination’s policy. 
+ The following provides general information about disinsection 
+ requirements  .  Note:  Policies may be changing.  DOT  continues to work to 
+ ensure that this list is accurate and up to date. 
+ Countries requiring the disinsection of all in-bound flights with an 
+ aerosolized spray while passengers are on board:"
+"If an airline files for bankruptcy, what is the timeframe to file a claim with a credit card company under the Fair Credit Billing Act?","Generally, the credit card issuer must receive this notice no later than 60 days after the date that you received the first monthly statement that listed the charge for the transportation.","If an airline files for bankruptcy and you need to file a claim with your credit card company under the Fair Credit Billing Act, you generally have 60 days from the date you received the first monthly statement that listed the charge for the transportation. It is important to act promptly and file your claim within this timeframe to ensure your rights are protected. If you have further questions or need assistance with the process, feel free to ask!","●  If you used a credit card to purchase your ticket and are entitled to a 
+ refund, you should file a claim with your credit card company as soon 
+ as possible. 
+ ●  Write to your credit card company at the address listed on your 
+ monthly statement for disputing a charge (this might not be the 
+ address where you send your payment) and include the following: 
+ ○  Your account number; 
+ ○  A photocopy of the ticket, itinerary, or receipt; 
+ ○  If the transportation was partially used, identify the used and 
+ unused segments; and 
+ ○  State that your airline is in bankruptcy and ceased all 
+ operations, you did not receive the service that you charged to 
+ your card, and you are requesting a credit pursuant to the Fair 
+ Credit Billing Act. 
+ ●  Generally, the credit card issuer must receive this notice no later than 
+ 60 days after the date that you received the first monthly statement 
+ that listed the charge for the transportation, although credit card | bankruptcy proceeding to recover a partial refund. 
+ ○ 
+ Note  : If you choose to file a proof of claim in the  bankruptcy 
+ proceeding, your claim will be considered along with many 
+ other creditors that the airline or ticket agent owes money to, 
+ such as banks, suppliers, and other service providers, some of 
+ which could be considered higher-priority debtors. Once the 
+ priority debts are paid, the remaining money will be paid to 
+ general unsecured creditors, such as passengers seeking 
+ refunds, and each creditor may only receive a small fraction of 
+ was owed. 
+ How do I get my money back working with my credit card company, 
+ debit card company, and travel insurance? 
+ I used a credit card to purchase my ticket. What should I do if the airline or 
+ ticket agent does not provide a refund? | ●  Depending on the type of bankruptcy the airline or ticket agent seeks, 
+ there are different options you may take to protect your interests. 
+ ●  The aviation consumer protections required by law provided to 
+ passengers may be impacted by bankruptcies. 
+ What if my airline is still operating flights after declaring bankruptcy? 
+ If you still plan to travel, contact the airline or ticket agent. 
+ ●  Contact the airline or ticket agent before heading to the airport and 
+ find out if your flight is still scheduled to fly and if there have been any 
+ changes in the flight or flight schedule 
+ What if the airline cancelled my flight? 
+ ●  Bankruptcy law is complicated and can affect your right to a refund. If 
+ the airline or ticket agent has filed for bankruptcy, the company may 
+ be temporarily prohibited from providing refunds and/or vouchers – 
+ for example, to conserve assets. If an airline or ticket agent that has"
+"According to DOT privacy guidelines, is it considered a 'deceptive' practice for an airline to mislead a consumer regarding a material matter?","Yes. A practice is deceptive if it is likely to mislead a consumer, acting reasonably under the circumstances, regarding a material matter.","Yes, according to the U.S. Department of Transportation (DOT) privacy guidelines, it is considered a ""deceptive"" practice for an airline to mislead a consumer regarding a material matter. A practice is deemed deceptive if it is likely to mislead a consumer who is acting reasonably under the circumstances. This means that if an airline provides misleading information about significant issues that could affect consumers' decisions, it may violate DOT regulations. If you have any specific instances in mind or need further clarification, feel free to ask!","It is an unfair or deceptive practice for an airline or ticket agent to violate 
+ the privacy of airline passengers by: 
+ ●  violating the terms of its privacy policy. 
+ ●  violating a rule issued by the DOT identifying specific privacy 
+ practices to be unfair or deceptive 
+ ●  violating the  Children's Online Privacy Protection  Act  (COPPA) or 
+ Federal Trade Commission (FTC) rules implementing COPPA 
+ ●  failing, as a participant in the  Data Privacy Framework  (DPF) 
+ Program  , to comply with DPF Principles 
+ ●  engaging in an “unfair” practice. In general, a practice is unfair if it 
+ causes or is likely to cause substantial injury, which is not reasonably 
+ avoidable, and the harm is not outweighed by benefits to consumers 
+ or competition. 
+ ●  engaging in a “deceptive” practice. A practice is deceptive if it is likely 
+ to mislead a consumer, acting reasonably under the circumstances, 
+ regarding a material matter. A matter is material if it is likely to have | The following information has been taken from U.S. Department of 
+ Transportation website:  https://www.transportation.gov/ 
+ Air Consumer Privacy 
+ Airlines and ticket agents regularly collect personal information from 
+ passengers in the course of business that may not be otherwise publicly 
+ available such as name, date of birth, and frequent flyer number. It is 
+ important for this information to be collected and maintained responsibly. 
+ Mishandling the private information of consumers may be considered an 
+ unfair or deceptive practice. The U.S. Department of Transportation (DOT) 
+ has the authority to investigate complaints and take action against airlines 
+ and ticket agents for unfair or deceptive practices. This authority includes 
+ imposing civil penalties where appropriate. 
+ It is an unfair or deceptive practice for an airline or ticket agent to violate 
+ the privacy of airline passengers by: 
+ ●  violating the terms of its privacy policy. | The Department’s Office of Aviation 
+Consumer Protection would consider undisclosed fees to be a deceptive practice in violation of 49 U.S.C. 41712. Pursuant to 14 CFR 399.79, a practice is 
+‘‘deceptive,’’ within the meaning of 49 U.S.C. 41712, to consumers if it is likely to mislead a consumer, acting"
+What is the DOT's role in enforcing COPPA (Children's Online Privacy Protection Act)?,DOT enforces COPPA with respect to airlines. DOT and FTC share jurisdiction over ticket agents with respect to COPPA.,"The Department of Transportation (DOT) enforces the Children's Online Privacy Protection Act (COPPA) specifically with respect to airlines. This means that DOT is responsible for ensuring that airlines do not obtain personal information from children under the age of 13 without first obtaining parental consent. The Federal Trade Commission (FTC) shares jurisdiction over ticket agents concerning COPPA regulations. If you need further information about COPPA, you can visit the FTC COPPA Page for more details. If you have specific concerns or situations regarding COPPA enforcement, please let me know!","DOT’s Office of Aviation Consumer Protection (OACP) is responsible for 
+ investigating potential violations of consumer privacy laws by airlines and 
+ ticket agents. To file a privacy-related complaint against an airline or ticket 
+ agent with OACP, click  here  . 
+ Please note both the Transportation Security Administration (TSA) and U.S. 
+ Customs and Border Patrol (CBP) have separate rules and authority for 
+ passenger personal information. This authority is independent of DOT’s 
+ OACP. If your complaint concerns airline security, please  contact TSA  . If 
+ you have questions about CBP's  biometric privacy policy, please visit 
+ CBP's Biometrics webpage  . 
+ COPPA 
+ In general, the Children’s Online Privacy Protection Act (COPPA) prohibits 
+ operators of web sites from obtaining personal information from children 
+ under the age of 13 without first obtaining parental consent. The FTC has 
+ issued regulations implementing COPPA. | operators of web sites from obtaining personal information from children 
+ under the age of 13 without first obtaining parental consent. The FTC has 
+ issued regulations implementing COPPA. 
+ DOT enforces COPPA with respect to airlines. DOT and FTC share 
+ jurisdiction over ticket agents with respect to COPPA. 
+ For further information about COPPA, see the  FTC COPPA  Page  . 
+ Data Privacy Framework 
+ The EU-U.S. Data Privacy Framework (DPF) is a method by which 
+ companies may transfer consumers’ personal data to the United States 
+ from the European Union (EU) without violating EU privacy laws. 
+ Analogous frameworks apply to the United Kingdom and Switzerland. DPF 
+ is administered by the Department of Commerce. Participants in the DPF 
+ agree to follow  DPF privacy principles  . In addition,  DPF participants must 
+ list the appropriate U.S. entity with jurisdiction to investigate any claims 
+ against the participant regarding possible unfair or deceptive practices and | DOT is the enforcement authority for airlines participating in the DPF. DOT 
+ shares jurisdiction with the FTC regarding ticket agents participating in 
+ DPF. DOT has  publicly committed  to make enforcement  of DPF a high 
+ priority. 
+ For further information about DPF, see the  Department  of Commerce DPF 
+ page  and the  FTC DPF page  . 
+ Last updated: Monday, September 29, 2025"
+"Under Air India's GDS misuse policy, what is the definition of 'Churning'?",Churning refers to the process of repeated bookings for same sector or overlapping sectors for same passenger through a PNR or across multiple PNRs on same GDS or across various GDS's by an agent.,"Under Air India's GDS misuse policy, ""Churning"" refers to the process of repeated bookings for the same sector or overlapping sectors for the same passenger. This can occur either through a single Passenger Name Record (PNR) or across multiple PNRs on the same Global Distribution System (GDS) or across various GDSs by an agent.
+
+For bookings created in Economy Class, up to 4 churns are permitted. After that, a penalty of US$10 will be charged for each additional churn done per passenger per segment. For Premium class bookings, the threshold is set at 10 churns. Factors considered to determine churn include the same origin, destination, passenger name, and IATA code.
+
+If you have any further questions or need additional information, feel free to ask!","Page13 Global Distribution Systems (GDS) Misuse Policy  
+Apart from the above, various booking violations done through GDS for which ADMs or 
+invoices are raised as per IATA Resolutions 824, 830a, 850m, 852, 890, 838 and 049x. are 
+as follows.  
+ 
+Churn Violation  
+Churning refers to the process of repeated bookings for same sector or overlapping sectors 
+for same passenger through a PNR or across multiple PNRs (Passenger Name Record) on 
+same GDS or across various GDS’s by an agent. For bookings created in Economy Cla ss 4 
+(four) churns will be permitted. Thereafter ADM of US$10 would be charged for each 
+additional churn done per passenger per segment. For Premium class bookings the 
+threshold is set at 10. Parameters for judging churn will include same - origin, destination, 
+passenger name, IATA code.  
+ 
+Duplicate Booking Violation  
+All multiple active bookings for a passenger with same origin & destination, segment date, | Page17  
+ 
+Raising of ADMs: Penalty for booking violations  
+Air India carries out regular audit of all booking transactions and reserves the right to raise 
+ADMs or Invoices, in order to recover excess GDS cost, to travel agents for non -compliant 
+booking practices. If the travel agent is found continuing with such p ractices, then Air India 
+reserves the right to take additional actions including blocking access of travel agent to Air 
+India’s inventory.  
+ 
+ADM or Invoice Fee structure for various Booking violations.  
+No Types of Misuse  Exceptions  Penalty  
+1 Churning  Up to 4 in Economy Class and 10 in Premium  US$ 10  
+2 Duplicates  If clarification is provided or if removed on time  US$ 10  
+3 Hidden Groups  Ticketed  US$ 10  
+4 Passive bookings  Ticketed  US$ 10  
+5 Speculative Bookings  If clarification is provided or removed in time  US$ 10  
+6 Waitlist  Ticketed  US$ 10  
+7 Invalid Booking class   US$ 10  
+8 Inactive segments   US$ 10  
+9 HX segments   US$ 30 | such segment.  
+ 
+Specifically, segments with the status code HX that are retained will incur a penalty of 
+USD 30 per passenger segment. If HX segments are not removed by the end of the billing 
+period (the last day of the month), they will be considered as misuse and will a ppear in the 
+GDS misuse invoices. However, if these segments are re moved with the appropriate 
+entries within 48 hours of receipt, Air India will waive the charges.  
+Hidden Groups  
+As per Air India group policies, which is in line with Industry practice, ten (10) or more 
+passengers travelling in the same flight on the same dates to the same O&D irrespective 
+of the booking class (RBD) as a group.  
+Air India requires such bookings to be made directly with Air India Group Desk."

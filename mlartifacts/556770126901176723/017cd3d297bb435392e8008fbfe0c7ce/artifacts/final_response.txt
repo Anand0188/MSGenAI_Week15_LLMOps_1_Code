@@ -1,0 +1,5 @@
+The penalty for a 'Churn Violation' in Economy Class for Air India bookings is as follows: 
+
+If a travel agent exceeds the allowed limit of 4 churns for the same passenger in Economy Class, an ADM (Agency Debit Memo) of US$ 10 will be charged for each additional churn done per passenger per segment.
+
+If you have any more questions or need further assistance, feel free to ask!

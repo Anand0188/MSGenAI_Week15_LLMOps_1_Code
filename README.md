@@ -25,6 +25,8 @@ AI-powered travel assistant using Azure OpenAI, Azure AI Search, and LLMOps best
 *   **OpenAI API Key** (for Ragas evaluation)
 
 ---
+0.
++
 
 ## 🚀 Setup & Installation
 
@@ -93,7 +95,9 @@ python -m src.ingestion
 ```
 
 **Output:**
-```
+````
+1
+``
 📂 Loading travel knowledge base from data/ folder...
 ============================================================
 📂 Found 9 PDF files in data/
@@ -137,7 +141,8 @@ Try these example queries:
 ### Run Evaluation
 Evaluate chatbot performance using Ragas metrics:
 ```bash
-python src/evaluate.py
+python src/evaluate.py # does not work in codespace
+python -m src.evaluate # try this to run as a module
 ```
 
 **Output:**
@@ -281,10 +286,10 @@ The system implements multi-layer safety:
 docker build -t wanderlust-chatbot .
 
 # Run container
-docker run -p 8501:8501 \
-  -e AZURE_OPENAI_API_KEY="your-key" \
-  -e AZURE_SEARCH_ENDPOINT="your-endpoint" \
-  -e AZURE_SEARCH_KEY="your-key" \
+docker run -p 8502:8502 \
+  -e AZURE_OPENAI_API_KEY="2nAvTU2zrs30svVnrPWiKwJW1aHk2qyoWJliMSyhLrfz1FgY5B8KJQQJ99BLACYeBjFXJ3w3AAAAACOGt5TK" \
+  -e AZURE_SEARCH_ENDPOINT="https://testservice888.search.windows.net" \
+  -e AZURE_SEARCH_KEY="8gKtzg36yti07W00ItLlOMLOEtA9D3YdxKibRkKqKIAzSeAAXh8D" \
   wanderlust-chatbot
 ```
 
