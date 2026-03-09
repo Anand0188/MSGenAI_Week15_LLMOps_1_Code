@@ -287,9 +287,9 @@ docker build -t wanderlust-chatbot .
 
 # Run container
 docker run -p 8502:8502 \
-  -e AZURE_OPENAI_API_KEY="2nAvTU2zrs30svVnrPWiKwJW1aHk2qyoWJliMSyhLrfz1FgY5B8KJQQJ99BLACYeBjFXJ3w3AAAAACOGt5TK" \
+  -e AZURE_OPENAI_API_KEY="key" \
   -e AZURE_SEARCH_ENDPOINT="https://testservice888.search.windows.net" \
-  -e AZURE_SEARCH_KEY="8gKtzg36yti07W00ItLlOMLOEtA9D3YdxKibRkKqKIAzSeAAXh8D" \
+  -e AZURE_SEARCH_KEY="search-key" \
   wanderlust-chatbot
 ```
 
